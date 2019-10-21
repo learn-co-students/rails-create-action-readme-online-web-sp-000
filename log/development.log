@@ -40,3 +40,29 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+Started GET "/" for 129.112.109.42 at 2019-10-21 13:34:36 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (5.5ms)
+Completed 200 OK in 32ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 129.112.109.42 at 2019-10-21 13:34:50 +0000
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 514ms (Views: 499.5ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/posts" for 129.112.109.42 at 2019-10-21 13:35:00 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3zhMXJWp+H4YtK7JvQ1G9147K7ZxrSO1NnKJNycVzY3vz/NGo1DgdbZ49aQGzA6IcGupO+JBzau72f+HAMZZ6w==", "title"=>"hi", "description"=>"fsdgsh", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hi"], ["description", "fsdgsh"], ["created_at", "2019-10-21 13:35:00.774760"], ["updated_at", "2019-10-21 13:35:00.774760"]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 23ms (ActiveRecord: 4.4ms)
+
+
