@@ -40,3 +40,107 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title Goes Here"], ["description", "Desc goes here..."], ["created_at", "2020-01-28 01:15:02.944367"], ["updated_at", "2020-01-28 01:15:02.944367"]]
+  [1m[35m (114.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-01-27 20:23:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/christopher/.rvm/gems/ruby-2.5.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/christopher/.rvm/gems/ruby-2.5.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (10.0ms)
+Completed 200 OK in 87ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-01-27 20:23:20 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 519ms (Views: 503.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-01-27 20:23:33 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jvaDUy8WKg8GmzE62bki9TW/aCIX9lS/oRQVHoFx7F6AUFXs228p8r4p9OWxdFgHwcaTsr/awAh8yvqdxPWcrQ==", "title"=>"fd", "description"=>"hfghdfh", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "fd"], ["description", "hfghdfh"], ["created_at", "2020-01-28 01:23:33.962067"], ["updated_at", "2020-01-28 01:23:33.962067"]]
+  [1m[35m (113.8ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 164ms (ActiveRecord: 114.5ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-01-27 20:25:49 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 302ms (Views: 282.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-01-27 20:25:52 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WoWR6MQP7dqeI5xZ7pVcgMaLpUGSogYGU5YCB6BgZ01UI0dXMHbuJyaRWYaGWCZyMvJe0TqOkrGOSO2E5eQXvg==", "title"=>"sdadas", "description"=>"asdasdadasd", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "sdadas"], ["description", "asdasdadasd"], ["created_at", "2020-01-28 01:25:52.358969"], ["updated_at", "2020-01-28 01:25:52.358969"]]
+  [1m[35m (125.0ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 173ms (ActiveRecord: 125.6ms)
+
+
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/posts/new" for 127.0.0.1 at 2020-01-27 20:29:02 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 291ms (Views: 269.1ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-01-27 20:29:06 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"591bF0xBN4q0Qn7qPjwDN67uy/uOn1uqmTSHrKTxywTpe42ouDg0dwzwuzVW8XnFWpcwayazzx1E6mgv4XW79w==", "title"=>"asdfsadfa", "description"=>"asdfsadfadasf", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "asdfsadfa"], ["description", "asdfsadfadasf"], ["created_at", "2020-01-28 01:29:06.597684"], ["updated_at", "2020-01-28 01:29:06.597684"]]
+  [1m[35m (165.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 196ms (ActiveRecord: 166.0ms)
+
+
+  
+NoMethodError (undefined method `post_path' for #<PostsController:0x00007f24b20f8e70>
+Did you mean?  posts_path):
+  
+app/controllers/posts_controller.rb:19:in `create'
+  Rendering /home/christopher/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/christopher/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/christopher/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.4ms)
+  Rendering /home/christopher/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/christopher/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/christopher/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/christopher/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.5ms)
+  Rendered /home/christopher/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (46.8ms)
+Started GET "/posts/new" for 127.0.0.1 at 2020-01-27 20:29:38 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 282ms (Views: 255.7ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-01-27 20:29:40 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c6lv5y4mjvESsUBZdeZL6qMF58SnqfUvIVx8YEd+HCx9D7lY2l+NDKoDhYYdKzEYV3wcVA+FYZj8gpPjAvps3w==", "title"=>"sadfasf", "description"=>"sdf", "commit"=>"Submit Post"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "sadfasf"], ["description", "sdf"], ["created_at", "2020-01-28 01:29:40.689357"], ["updated_at", "2020-01-28 01:29:40.689357"]]
+  [1m[35m (172.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts.6
+Completed 302 Found in 179ms (ActiveRecord: 172.7ms)
+
+
+Started GET "/posts.6" for 127.0.0.1 at 2020-01-27 20:29:40 -0500
+Processing by PostsController#index as 
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 38ms (Views: 26.7ms | ActiveRecord: 0.2ms)
+
+
