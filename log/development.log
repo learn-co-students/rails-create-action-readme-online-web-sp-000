@@ -40,3 +40,87 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title goes here"], ["description", "Desc goes here..."], ["created_at", "2020-05-27 23:21:04.547458"], ["updated_at", "2020-05-27 23:21:04.547458"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/posts/new" for ::1 at 2020-05-27 19:27:28 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 308ms (Views: 297.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts" for ::1 at 2020-05-27 19:27:57 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"40ifBy9TJg+ePeuOet1SGdXtrWokVrV267FPYjhrqKO7GmgMh3qnSOQWbVdTT8CJnBSfrwQvPoXpisktV3b4SQ==", "title"=>"", "description"=>"", "commit"=>"Submit Post"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["description", ""], ["created_at", "2020-05-27 23:27:57.954712"], ["updated_at", "2020-05-27 23:27:57.954712"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 21ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-05-27 19:30:47 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 15ms (Views: 9.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for ::1 at 2020-05-27 19:30:50 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mDT20+2TcOZQDN5OzRJCQhsojwOnSAmMjqg4Kip3OtnAZgHYRbrxoSonWJfkgNDSUtG9xocxgn+Mk75lRWpqMw==", "title"=>"", "description"=>"", "commit"=>"Submit Post"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["description", ""], ["created_at", "2020-05-27 23:30:50.445721"], ["updated_at", "2020-05-27 23:30:50.445721"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 19ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-05-27 19:34:20 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 16ms (Views: 10.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for ::1 at 2020-05-27 19:34:31 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jof0WCFXtNwTgDH+khaOy7fXN+Yu3pXcn8GQCXT4DcrW1QNTiX41m2mrtye7hBxb/i4FIw6nHi+d+hZGG+VdIA==", "title"=>"", "description"=>"", "commit"=>"Submit Post"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["description", ""], ["created_at", "2020-05-27 23:34:31.520750"], ["updated_at", "2020-05-27 23:34:31.520750"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 22ms (ActiveRecord: 1.7ms)
+
+
+Started POST "/posts" for ::1 at 2020-05-27 19:35:53 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jof0WCFXtNwTgDH+khaOy7fXN+Yu3pXcn8GQCXT4DcrW1QNTiX41m2mrtye7hBxb/i4FIw6nHi+d+hZGG+VdIA==", "title"=>"Happy!", "description"=>"Dance of confinement", "commit"=>"Submit Post"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Happy!"], ["description", "Dance of confinement"], ["created_at", "2020-05-27 23:35:53.718879"], ["updated_at", "2020-05-27 23:35:53.718879"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 22ms (ActiveRecord: 1.0ms)
+
+
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Started POST "/posts" for ::1 at 2020-05-27 19:38:18 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jof0WCFXtNwTgDH+khaOy7fXN+Yu3pXcn8GQCXT4DcrW1QNTiX41m2mrtye7hBxb/i4FIw6nHi+d+hZGG+VdIA==", "title"=>"Happy!2", "description"=>"Dance of confinement2", "commit"=>"Submit Post"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Happy!2"], ["description", "Dance of confinement2"], ["created_at", "2020-05-27 23:38:18.362398"], ["updated_at", "2020-05-27 23:38:18.362398"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 8ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/posts" for ::1 at 2020-05-27 19:38:18 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.1ms)
+
+
