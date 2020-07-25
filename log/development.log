@@ -40,3 +40,96 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title Goes Here"], ["description", "Desc goes here..."], ["created_at", "2020-07-25 16:21:11.450287"], ["updated_at", "2020-07-25 16:21:11.450287"]]
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-07-25 12:26:11 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/cleow/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/cleow/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (16.1ms)
+Completed 200 OK in 100ms (Views: 52.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-07-25 12:26:18 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 1422ms (Views: 1386.5ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-07-25 12:26:27 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jSiuuwOcIjNNv3FMBTC4WeSsR+TnEVeSa0Er/+rwDNnPcfdQdgb6W4FrQRsHcq53uwYY78PguCyEVmKePsaFzw==", "title"=>"Hello World HEY HEY HEY", "description"=>"testing\r\n", "commit"=>"Submit Post"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hello World HEY HEY HEY"], ["description", "testing\r\n"], ["created_at", "2020-07-25 16:26:27.240040"], ["updated_at", "2020-07-25 16:26:27.240040"]]
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 264ms (ActiveRecord: 6.9ms)
+
+
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/posts/new" for 127.0.0.1 at 2020-07-25 12:47:21 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 83ms (Views: 60.0ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-07-25 12:47:30 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"73t5IkM5/RUdmwZm7bWTz6TDOO+tWQe2EvxCVOGDhPKtIiDJNqMlfdFPNjHv94Xh+2ln5Imo6Aj96ws1NbUN5A==", "title"=>"hello", "description"=>"hello world", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hello"], ["description", "hello world"], ["created_at", "2020-07-25 16:47:30.417565"], ["updated_at", "2020-07-25 16:47:30.417565"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 5.5ms)
+
+
+  
+NoMethodError (undefined method `redirect_to_post_path' for #<PostsController:0x00007fffce80fb58>
+Did you mean?  redirect_to):
+  
+app/controllers/posts_controller.rb:19:in `create'
+  Rendering /home/cleow/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/cleow/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/cleow/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.8ms)
+  Rendering /home/cleow/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/cleow/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendering /home/cleow/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/cleow/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/cleow/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (208.9ms)
+Started GET "/posts" for 127.0.0.1 at 2020-07-25 12:48:13 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 59ms (Views: 49.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-07-25 12:48:17 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 54ms (Views: 49.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-07-25 12:48:27 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pI55BLaF8Pwwck+YjBct6MODlAnlWIC72qg6Y+Zu7mnm1yDvwx8olPymf8+OVTvGnCnLAsGpbwU1v3MCMlhnfw==", "title"=>"another one", "description"=>"dj khalid", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "another one"], ["description", "dj khalid"], ["created_at", "2020-07-25 16:48:27.166490"], ["updated_at", "2020-07-25 16:48:27.166490"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 9ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/posts/5" for 127.0.0.1 at 2020-07-25 12:48:27 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 84ms (Views: 65.0ms | ActiveRecord: 1.5ms)
+
+
