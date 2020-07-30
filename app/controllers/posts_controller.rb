@@ -11,5 +11,20 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  # add create method here
+
+  def create
+  @post = Post.new
+  @post.title = params[:title]
+  @post.description = params[:description]
+  @post.save
+  redirect_to post_path(@post) #convention of redirecting to a new show page 
 end
+
+end
+
+# Save method inserts new record into the database. This is what the create method is doing.
+# bundle exec rails console
+# post = Post.new
+# post.title = "Title Goes Here"
+# post.description = "Desc goes here..."
+# post.save
