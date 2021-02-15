@@ -8,7 +8,6 @@ class PostsController < ApplicationController
   end
 
   def new
-    # @post = Post.new --why here? was when opened lab
   end
 
   def create
