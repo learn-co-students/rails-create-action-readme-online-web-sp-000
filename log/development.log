@@ -40,3 +40,58 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+Started GET "/posts/new" for 127.0.0.1 at 2021-02-20 09:13:25 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (3.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+Started GET "/posts/new" for 127.0.0.1 at 2021-02-20 09:13:27 -0600
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (49.9ms)
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 1746ms (Views: 1626.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 3075ms (Views: 2717.5ms | ActiveRecord: 17.3ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2021-02-20 09:13:42 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A0sII9MEQu+mE8lSJem04m4N49fbYrY5DVgDBhE6E7IX+dRgt5jtFNxxwuBTxQPmVzuWiwvBz6GurBdpdzirQQ==", "title"=>"Black Sabbath rules!", "description"=>"Music is the best.\r\n", "commit"=>"Submit Post"}
+  [1m[35m (3.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (10.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Black Sabbath rules!"], ["description", "Music is the best.\r\n"], ["created_at", "2021-02-20 15:13:42.709513"], ["updated_at", "2021-02-20 15:13:42.709513"]]
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 27.8ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"posts", :id=>nil} missing required keys: [:id]):
+  
+app/controllers/posts_controller.rb:20:in `create'
+  Rendering /home/bongofury/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/bongofury/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/bongofury/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.5ms)
+  Rendering /home/bongofury/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/bongofury/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /home/bongofury/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/bongofury/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/bongofury/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.9ms)
+Started POST "/posts" for 127.0.0.1 at 2021-02-20 09:14:43 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A0sII9MEQu+mE8lSJem04m4N49fbYrY5DVgDBhE6E7IX+dRgt5jtFNxxwuBTxQPmVzuWiwvBz6GurBdpdzirQQ==", "title"=>"Black Sabbath rules!", "description"=>"Music is the best.\r\n", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (21.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Black Sabbath rules!"], ["description", "Music is the best.\r\n"], ["created_at", "2021-02-20 15:14:43.948246"], ["updated_at", "2021-02-20 15:14:43.948246"]]
+  [1m[35m (23.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 227ms (ActiveRecord: 73.9ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2021-02-20 09:14:44 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (4.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 1194ms (Views: 949.8ms | ActiveRecord: 4.7ms)
+
+
